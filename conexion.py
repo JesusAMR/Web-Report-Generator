@@ -3,6 +3,8 @@ import mysql.connector
 class Conexion():
     credentials = {'user':'jesus','password':'1234','host':'localhost'}
     cnx = mysql.connector
+    def __init__(self, credenciales=credentials):
+        self.credentials = credenciales
     def connect(self):
         try:
             self.cnx = mysql.connector.connect(**self.credentials)
