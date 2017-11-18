@@ -21,8 +21,3 @@ class Conexion():
     def close(self):
         self.cnx.close()
         print("Cerrado")
-
-
-cn = Conexion()
-cn.connect()
-cn.close()
