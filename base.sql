@@ -32,6 +32,6 @@ CREATE TABLE Lectura(
 /*Generar relacion lectura congelador*/
 CREATE TABLE Lectura_Congelador(
     id_Lectura INT PRIMARY KEY REFERENCES Lectura(id_Lectura),
-    id_Congelador INT REFERENCES Congelador(id_Congelador)
+    id_Congelador INT NOT NULL REFERENCES Congelador(id_Congelador)
 );
 
