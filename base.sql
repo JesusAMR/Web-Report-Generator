@@ -25,7 +25,8 @@ CREATE TABLE Congelador(
 CREATE TABLE Lectura(
     id_Lectura INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     temperatura FLOAT NOT NULL,
-    humedad FLOAT NOT NULL
+    humedad FLOAT NOT NULL,
+    corriente FLOAT 
 )
 
 CREATE TABLE Lectura_Congelador(
