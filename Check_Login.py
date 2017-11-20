@@ -3,7 +3,7 @@
 import mysql.connector
 import cgi, cgitb 
 
-db=mysql.connector.connect(user="jesus",passwd="1234",db="Sigma",unix_socket="/opt/lampp/var/mysql/mysql.sock")
+db=mysql.connector.connect(user="jesus",passwd="1234",db="Sigma")
 
 cursor = db.cursor()
 
