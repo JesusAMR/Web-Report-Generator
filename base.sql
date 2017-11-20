@@ -1,19 +1,19 @@
 CREATE DATABASE Sigma;
 
-USE [Sigma]
+USE Sigma;
 
 /*Generar tabla de usuarios*/
 CREATE TABLE Usuarios(
-    id_Usuario INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    id_Usuario INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     nombre VARCHAR(15) NOT NULL,
     ap_Paterno VARCHAR(15) NOT NULL,
     ap_Materno VARCHAR(15) NOT NULL,
     fecha_Nacimiento date NOT NULL CHECK(fecha >= GETDATE()),
     contrasena VARCHAR(20) NOT NULL
-)
+);
 /*Generar tabla de congeladores*/
 CREATE TABLE Congelador(
-    id_Congelador INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    id_Congelador INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     temperatura_Normal_Min FLOAT NOT NULL,
     temperatura_Normal_Max FLOAT NOT NULL,
     humedad_Normal_Min FLOAT NOT NULL,
@@ -21,17 +21,17 @@ CREATE TABLE Congelador(
     capacidad INT NOT NULL,
     detalles VARCHAR(250),
     estado BOOLEAN NOT NULL
-)
+);
 /*Generar tabla de lecturas*/
 CREATE TABLE Lectura(
-    id_Lectura INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    id_Lectura INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     temperatura FLOAT NOT NULL,
     humedad FLOAT NOT NULL,
     corriente FLOAT 
-)
+);
 /*Generar relacion lectura congelador*/
 CREATE TABLE Lectura_Congelador(
-    id_Lectura INT PRIMARY KEY FOREIGN KEY REFERENCES Lectura(id_Lectura),
-    id_Congelador INT FOREIGN KEY REFERENCES Congelador(id_Congelador)
-)
+    id_Lectura INT PRIMARY KEY REFERENCES Lectura(id_Lectura),
+    id_Congelador INT REFERENCES Congelador(id_Congelador)
+);
 
