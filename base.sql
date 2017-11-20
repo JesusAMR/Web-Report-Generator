@@ -2,7 +2,7 @@ CREATE DATABASE Sigma;
 
 USE [Sigma]
 
-CREATE TABLE usuarios(
+CREATE TABLE Usuarios(
     id_Usuario INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     nombre VARCHAR(15) NOT NULL,
     ap_Paterno VARCHAR(15) NOT NULL,
@@ -11,12 +11,25 @@ CREATE TABLE usuarios(
     contrasena VARCHAR(20) NOT NULL
 )
 
-CREATE TABLE refrigerador(
+CREATE TABLE Congelador(
     id_Congelador INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     temperatura_Normal_Min FLOAT NOT NULL,
     temperatura_Normal_Max FLOAT NOT NULL,
     humedad_Normal_Min FLOAT NOT NULL,
     humedad_Normal_Max FLOAT NOT NULL,
     capacidad INT NOT NULL,
-    detalles VARCHAR(250) 
+    detalles VARCHAR(250),
+    estado BOOLEAN NOT NULL
 )
+
+CREATE TABLE Lectura(
+    id_Lectura INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    temperatura FLOAT NOT NULL,
+    humedad FLOAT NOT NULL
+)
+
+CREATE TABLE Lectura_Congelador(
+    id_Lectura INT PRIMARY KEY FOREIGN KEY REFERENCES Lectura(id_Lectura),
+    id_Congelador INT FOREIGN KEY REFERENCES Congelador(id_Congelador)
+)
+
