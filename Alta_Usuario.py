@@ -1,9 +1,9 @@
 #!"C:\Python27\python.exe"
 
-import MySQLdb
+import mysql.connector
 import cgi, cgitb 
 
-db=MySQLdb.connect(user="root",passwd="",db="SIGMA",unix_socket="/opt/lampp/var/mysql/mysql.sock")
+db= mysql.connector.connect(user="jesus",passwd="1234",db="Sigma")
 
 cursor = db.cursor()
 
@@ -34,7 +34,7 @@ print """
 
 	<div align = 'center'> 	
 	<h2> Usuario Agregado exitosamente </h2> 
-	<br><a href = '/Sigma/menu.html'><input type = 'button' value = 'Menu' name = 'Menu'/> </a><br/>
+	<br><a href = '/Sigma/html/menu.html'><input type = 'button' value = 'Menu' name = 'Menu'/> </a><br/>
 	</div>
 
 """
