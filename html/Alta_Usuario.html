@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+<title>Sigma Alimentos - Alta de Usuario</title>
+</head>
+<body>
+    <div align='center'>
+        <form action = "/Sigma/Alta_Usuario.py" method = "post">
+            <br><h1>Alta de Usuario</h1><br/>
+            <img src="Agregar_Usuario.png" alt="Add_User Picture" style="width:300px;height:250px;">
+            <br><br><br>
+            <br>Nombre: <input type = "text" name = "nombre" maxlength="15" required> <br/>
+            <br>Apellido Paterno: <input type = "text" name = "ap_Paterno" maxlength="15" required> <br/>
+            <br>Apellido Materno: <input type = "text" name = "ap_Materno" maxlength="15" required> <br/>
+            <br>Fecha de Nacimiento: <input type = "date" name = "fecha_Nac" required> <br/>
+            <br>Contrasena: <input type = "password" name = "contrasena" maxlength="20" required> <br/>
+            <br><input type = "submit" value = "Agregar Usuario"> <br/>
+        </form>
+        <br><a href = "/Sigma/alta-baja-usuarios.html"><input type = 'button' value = 'Regresar' name = 'Regresar'/> </a><br/>
+    </div>
+</body>	
+</html>
