@@ -25,22 +25,20 @@ except:
 	acceso = 0
 
 
-#--------------------------------------------------------------------------------------------------------
-
 print 'Content-type:text/html\r\n\r\n'
 print '<html>'
 
 print '<head> <title> Log In </title> </head>'
 
 print '<body>'
-
+print "<div align='center'>"
 if(acceso):
-	print 'Usuario: %s <br/> Password: %s' % (User, Pass)
+	print '<meta http-equiv="refresh" content="0; url=/Sigma/html/Menu.html" />'	
 else:
-	print Results
+	print '<meta http-equiv="refresh" content="0; url=/Sigma/html/Login.html" />'
 	print '<br>Usuario No Valido. Hay un error en su usuario o contrasena</br>'
 	
-
+print "</div>"
 print '</html>'
 
 db.close()
