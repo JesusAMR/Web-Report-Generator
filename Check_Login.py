@@ -1,9 +1,9 @@
 #!"C:\Python27\python.exe"
 
-import MySQLdb
+import mysql.connector
 import cgi, cgitb 
 
-db=MySQLdb.connect(user="root",passwd="",db="SIGMA",unix_socket="/opt/lampp/var/mysql/mysql.sock")
+db=mysql.connector.connect(user="jesus",passwd="1234",db="Sigma")
 
 cursor = db.cursor()
 
@@ -25,21 +25,20 @@ except:
 	acceso = 0
 
 
-#--------------------------------------------------------------------------------------------------------
-
 print 'Content-type:text/html\r\n\r\n'
 print '<html>'
 
 print '<head> <title> Log In </title> </head>'
 
 print '<body>'
-
+print "<div align='center'>"
 if(acceso):
-	print '<meta http-equiv="refresh" content="0; url=/Sigma/menu.html" />'
-else: 
-	print '<body>Usuario No Valido. Hay un error en su User o Password</body>'
-	print '<meta http-equiv="refresh" content="0; url=/Sigma/Login.html" />'
-
+	print '<meta http-equiv="refresh" content="0; url=/Sigma/html/Menu.html" />'	
+else:
+	print '<meta http-equiv="refresh" content="0; url=/Sigma/html/Login.html" />'
+	print '<br>Usuario No Valido. Hay un error en su usuario o contrasena</br>'
+	
+print "</div>"
 print '</html>'
 
 db.close()
