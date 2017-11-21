@@ -35,3 +35,5 @@ CREATE TABLE Lectura_Congelador(
     id_Congelador INT NOT NULL REFERENCES Congelador(id_Congelador)
 );
 
+/* Ejemplo de como generar usuario*/
+INSERT INTO Usuarios(nombre,ap_Paterno,ap_Materno,fecha_Nacimiento,contrasena) VALUES('jesus','miranda','rendon','1997-06-13',1234);
