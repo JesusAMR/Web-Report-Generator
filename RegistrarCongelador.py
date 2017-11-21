@@ -44,9 +44,12 @@ print "<div align='center'>"
 try:
     cursor.execute(anadir_congelador, informacion_congelador)
     db.commit()
-    print "exito"
+    print "<h2> Congelador agregado exitosamente </h2>"
+    print "<br><a href = '/Sigma/html/menu.html'><input type = 'button' value = 'Menu' name = 'Menu'/> </a><br/>"
 except mysql.connector.Error as err:
     print err
+    print "<h2> Congelador no agregado</h2>"
+    print "<br><a href = '/Sigma/html/menu.html'><input type = 'button' value = 'Menu' name = 'Menu'/> </a><br/>"
 print "</div>"
 print"</body>"
 print"</html>"
